@@ -1,7 +1,12 @@
-import '../styles/globals.css'
+import "../styles/globals.css";
+import ThemeContextWrapper from "../components/context/themeContextWrapper";
 
 function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+  return (
+    <ThemeContextWrapper>
+      <Component {...pageProps} />
+    </ThemeContextWrapper>
+  );
 }
 
-export default MyApp
+export default MyApp;

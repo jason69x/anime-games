@@ -28,7 +28,7 @@ export default function Home() {
   }
   return (
     <div
-      className='wrapper h-screen w-screen bg-cover bg-blend-lighten bg-center grid grid-cols-1 place-items-center transition-all ease-in-out dark:bg-blend-darken'
+      className='wrapper h-screen w-screen bg-cover bg-blend-lighten bg-center grid grid-cols-1 place-items-center transition-all ease-in-out dark:bg-blend-darken select-none'
       style={{
         backgroundImage: `url(${imageData ? imageData.url : "./nino.png"})`,
         backgroundColor: `${bgColor}`,
@@ -58,7 +58,7 @@ export default function Home() {
               imageMutate();
             }}
           >
-            <ArrowCircleRightIcon className='h-6 w-6 lg:h-8 lg:w-8 inline-block hover:scale-110'></ArrowCircleRightIcon>
+            <ArrowCircleRightIcon className='h-6 w-6 lg:h-8 lg:w-8 inline-block hover:scale-110 opacity-90 hover:opacity-100'></ArrowCircleRightIcon>
           </button>
         </div>
       )}
