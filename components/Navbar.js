@@ -11,7 +11,7 @@ const Navbar = ({ bgColor }) => {
         className='hover:scale-110 opacity-90 hover:opacity-100'
       >
         <Link href='https://www.linkedin.com/in/abhishek-meena-886998157'>
-          <a target='_blank'>
+          <a target='_blank' aria-label='linkedin profile'>
             {" "}
             <UserCircleIcon className='h-6 w-6'></UserCircleIcon>
           </a>
@@ -22,7 +22,9 @@ const Navbar = ({ bgColor }) => {
         className='hover:scale-110 opacity-90 hover:opacity-100'
       >
         <Link href='/tilegame'>
-          <ArrowCircleRightIcon className='h-6 w-6'></ArrowCircleRightIcon>
+          <button aria-label='play waifu memory game'>
+            <ArrowCircleRightIcon className='h-6 w-6'></ArrowCircleRightIcon>
+          </button>
         </Link>
       </div>
     </div>

@@ -5,6 +5,7 @@ import { ArrowCircleRightIcon } from "@heroicons/react/solid";
 import Navbar from "../components/Navbar";
 import getQuote from "../lib/quotes";
 import ErrorBox from "../components/ErrorBox";
+import Head from "next/head";
 
 export default function Home() {
   const { data, isError, mutate } = useFetch(
@@ -28,16 +29,27 @@ export default function Home() {
   }
   return (
     <div
-      className='wrapper h-screen w-screen bg-cover bg-blend-lighten bg-center grid grid-cols-1 place-items-center transition-all ease-in-out dark:bg-blend-darken select-none'
+      className='wrapper h-screen w-screen bg-cover bg-blend-lighten bg-center grid grid-cols-1 place-items-center dark:bg-blend-darken select-none'
       style={{
         backgroundImage: `url(${imageData ? imageData.url : "./nino.png"})`,
         backgroundColor: `${bgColor}`,
       }}
     >
+      <Head>
+        <title>itsukichan</title>
+        <meta
+          name='viewport'
+          content='width=device-width,minimum-scale=1'
+        ></meta>
+        <meta
+          name='description'
+          content='random anime quote with a waifu picture + a waifu memory game '
+        ></meta>
+      </Head>
       <Navbar bgColor={bgColor}></Navbar>
       {data && (
         <div
-          className='quoteBox bg-gray-100 w-4/5 lg:w-2/5 h-2/5 p-4 text-center grid grid-cols-1 place-items-center overflow-auto rounded-lg dark:bg-gray-700'
+          className='quoteBox bg-white w-4/5 lg:w-2/5 h-2/5 p-4 text-center grid grid-cols-1 place-items-center overflow-auto rounded-lg dark:bg-gray-700'
           style={{ color: `${bgColor}` }}
         >
           <p className='font-mono text-lg lg:text-2xl font-semibold'>
@@ -53,6 +65,7 @@ export default function Home() {
             </p>
           </div>
           <button
+            aria-label='next quote'
             onClick={() => {
               mutate();
               imageMutate();

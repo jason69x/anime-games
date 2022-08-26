@@ -5,6 +5,7 @@ import DarkModeBtn from "../components/DarkModeBtn";
 import { ArrowCircleLeftIcon, SparklesIcon } from "@heroicons/react/solid";
 import Link from "next/link";
 import toast, { Toaster } from "react-hot-toast";
+import Head from "next/head";
 
 const TileGame = () => {
   const [cards, setCards] = useState(shuffleCards);
@@ -92,16 +93,30 @@ const TileGame = () => {
   return (
     <main className='items-center flex h-screen w-screen overflow-auto p-4 justify-center leading-5 lg:items-start lg:flex-col bg-gradient-to-br from-pink-200 to-pink-400 dark:bg-[#374151] dark:from-gray-700 dark:to-gray-900 transition-all ease-in select-none'>
       <Toaster />
+      <Head>
+        <title>itsukichan - {bestScore}</title>
+        <meta
+          name='viewport'
+          content='width=device-width,minimum-scale=1'
+        ></meta>
+        <meta
+          name='description'
+          content='lets see if you can remember your waifu >.<'
+        ></meta>
+      </Head>
       <nav className='bottom-0 left-0 fixed m-auto flex items-center shadow-lg justify-evenly w-full p-2 bg-gray-50 h-16 font-mono text-pink-400 text-lg font-semibold lg:static lg:rounded-md lg:my-0 lg:max-w-3xl dark:bg-[#374151]'>
         <DarkModeBtn bgColor={null} />
         <div className='hover:scale-110 opacity-90 hover:opacity-100'>
           <Link href='/'>
-            <ArrowCircleLeftIcon className='h-6 w-6'></ArrowCircleLeftIcon>
+            <button aria-label='go back to home page button'>
+              <ArrowCircleLeftIcon className='h-6 w-6'></ArrowCircleLeftIcon>
+            </button>
           </Link>
         </div>
         <p>Turns: {turns}</p>
         <p>Best: {bestScore}</p>
         <button
+          aria-label='new game button'
           onClick={() => {
             setCards(shuffleCards());
             setTurns(0);

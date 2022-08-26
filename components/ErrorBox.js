@@ -5,7 +5,7 @@ import Navbar from "../components/Navbar";
 const ErrorBox = ({ bgColor }) => {
   return (
     <div
-      className='errorWrapper h-screen w-screen bg-cover bg-blend-lighten bg-center grid grid-cols-1 place-items-center transition-all ease-in-out dark:bg-blend-darken'
+      className='errorWrapper h-screen w-screen bg-cover bg-blend-lighten bg-center grid grid-cols-1 place-items-center  dark:bg-blend-darken'
       style={{
         backgroundImage: `url("./nino.png")`,
         backgroundColor: `${bgColor}`,
@@ -13,7 +13,7 @@ const ErrorBox = ({ bgColor }) => {
       }}
     >
       <Navbar bgColor={bgColor} />
-      <div className='errorBox bg-gray-100 w-4/5 h-1/5 p-4 lg:w-2/5 text-center grid grid-cols-1 place-items-center overflow-auto rounded-lg dark:bg-gray-700'>
+      <div className='errorBox bg-white w-4/5 h-1/5 p-4 lg:w-2/5 text-center grid grid-cols-1 place-items-center overflow-auto rounded-lg dark:bg-gray-700'>
         <p className='font-mono text-lg lg:text-xl'>
           Sorry, plz try again later!
         </p>
