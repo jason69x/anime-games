@@ -31,7 +31,7 @@ export default function Home() {
     <div
       className='wrapper h-screen w-screen bg-cover bg-blend-lighten bg-center grid grid-cols-1 place-items-center dark:bg-blend-darken select-none'
       style={{
-        backgroundImage: `url(${imageData ? imageData.url : "./nino.png"})`,
+        backgroundImage: `url(${imageData ? imageData.url : ""})`,
         backgroundColor: `${bgColor}`,
       }}
     >

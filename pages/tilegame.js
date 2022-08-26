@@ -57,26 +57,30 @@ const TileGame = () => {
     if (cards.length && cards.filter((card) => !card.matched).length < 1) {
       if (turns < bestScore) {
         toast(
-          <p className='text-pink-400'>
+          <p className='text-pink-400 dark:text-pink-600'>
             New Best Score <strong>{turns}</strong> Turns.
           </p>,
           {
             position: "bottom-center",
             className: "font-mono text-lg dark:bg-[#374151]",
-            icon: <SparklesIcon className='text-yellow-400 h-6 w-6' />,
+            icon: (
+              <SparklesIcon className='text-yellow-400 h-6 w-6 dark:text-yellow-500' />
+            ),
           }
         );
         setBestScore(turns);
         localStorage.setItem("tile-game-best-score", JSON.stringify(turns));
       } else {
         toast(
-          <p className='text-pink-400 '>
+          <p className='text-pink-400 dark:text-pink-600'>
             You Won in <strong>{turns}</strong> Turns.
           </p>,
           {
             position: "bottom-center",
             className: "font-mono text-lg dark:bg-[#374151]",
-            icon: <SparklesIcon className='text-yellow-400 h-6 w-6' />,
+            icon: (
+              <SparklesIcon className='text-yellow-400 h-6 w-6 dark:text-yellow-500' />
+            ),
           }
         );
       }
@@ -94,7 +98,7 @@ const TileGame = () => {
     <main className='items-center flex h-screen w-screen overflow-auto p-4 justify-center leading-5 lg:items-start lg:flex-col bg-gradient-to-br from-pink-200 to-pink-400 dark:bg-[#374151] dark:from-gray-700 dark:to-gray-900 transition-all ease-in select-none'>
       <Toaster />
       <Head>
-        <title>itsukichan - {bestScore}</title>
+        <title>itsukichan</title>
         <meta
           name='viewport'
           content='width=device-width,minimum-scale=1'
@@ -104,15 +108,16 @@ const TileGame = () => {
           content='lets see if you can remember your waifu >.<'
         ></meta>
       </Head>
-      <nav className='bottom-0 left-0 fixed m-auto flex items-center shadow-lg justify-evenly w-full p-2 bg-gray-50 h-16 font-mono text-pink-400 text-lg font-semibold lg:static lg:rounded-md lg:my-0 lg:max-w-3xl dark:bg-[#374151]'>
+      <nav className='bottom-0 left-0 fixed m-auto flex items-center shadow-lg justify-evenly w-full p-2 bg-gray-50 h-16 font-mono text-pink-500 text-lg font-semibold lg:static lg:rounded-md lg:my-0 lg:max-w-3xl dark:bg-[#374151] dark:text-pink-600'>
         <DarkModeBtn bgColor={null} />
-        <div className='hover:scale-110 opacity-90 hover:opacity-100'>
-          <Link href='/'>
-            <button aria-label='go back to home page button'>
-              <ArrowCircleLeftIcon className='h-6 w-6'></ArrowCircleLeftIcon>
-            </button>
-          </Link>
-        </div>
+        <Link href='/'>
+          <button
+            aria-label='go back to home page button'
+            className='hover:scale-110 opacity-90 hover:opacity-100'
+          >
+            <ArrowCircleLeftIcon className='h-6 w-6'></ArrowCircleLeftIcon>
+          </button>
+        </Link>
         <p>Turns: {turns}</p>
         <p>Best: {bestScore}</p>
         <button
@@ -124,7 +129,7 @@ const TileGame = () => {
             setChoiceTwo(null);
             setDisable(false);
           }}
-          className='bg-pink-400 text-gray-50 rounded-md px-2 py-0 dark:text-[#374151] hover:scale-95 opacity-90 shadow-md'
+          className='bg-pink-500 text-gray-50 rounded-md px-2 py-0 dark:text-[#374151] dark:bg-pink-600 hover:scale-95 opacity-90 shadow-md'
         >
           New Game
         </button>

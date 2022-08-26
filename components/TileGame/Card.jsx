@@ -18,12 +18,16 @@ const Card = ({ disable, card, handleChoice, flipped, darkMode }) => {
         src={card.src}
         alt='card-front'
         className='front absolute w-full rounded-md shadow-md'
+        width={720}
+        height={720}
       />
       <img
-        src={theme !== "dark" ? "/images/logo.png" : "/images/darklogo.png"}
+        src={theme !== "dark" ? "/images/logo.webp" : "/images/darklogo.webp"}
         alt='card-back'
         onClick={handleClick}
         className='back w-full rounded-md shadow-md'
+        width={720}
+        height={720}
       />
     </div>
   );

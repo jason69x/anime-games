@@ -10,35 +10,33 @@ const DarkModeBtn = ({ bgColor }) => {
   return (
     <>
       {!darkMode ? (
-        <div
+        <button
+          aria-label='toggle light mode'
           className='hover:scale-110 opacity-90 hover:opacity-100 select-none'
           style={{ color: `${bgColor}` }}
         >
-          <button aria-label='toggle light mode'>
-            <SunIcon
-              className='h-6 w-6'
-              onClick={() => {
-                setDarkMode((prev) => !prev);
-                changeTheme(darkMode ? themes.dark : themes.light);
-              }}
-            ></SunIcon>
-          </button>
-        </div>
+          <SunIcon
+            className='h-6 w-6'
+            onClick={() => {
+              setDarkMode((prev) => !prev);
+              changeTheme(darkMode ? themes.dark : themes.light);
+            }}
+          ></SunIcon>
+        </button>
       ) : (
-        <div
+        <button
+          aria-label='toggle dark mode'
           style={{ color: `${bgColor}` }}
           className='hover:scale-110 opacity-90 hover:opacity-100 select-none'
         >
-          <button aria-label='toggle dark mode'>
-            <MoonIcon
-              className='h-6 w-6'
-              onClick={() => {
-                setDarkMode((prev) => !prev);
-                changeTheme(darkMode ? themes.dark : themes.light);
-              }}
-            ></MoonIcon>
-          </button>
-        </div>
+          <MoonIcon
+            className='h-6 w-6'
+            onClick={() => {
+              setDarkMode((prev) => !prev);
+              changeTheme(darkMode ? themes.dark : themes.light);
+            }}
+          ></MoonIcon>
+        </button>
       )}
     </>
   );
