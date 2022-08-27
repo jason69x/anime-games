@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { themeContext } from "../context/themeContext";
 
-const Card = ({ disable, card, handleChoice, flipped, darkMode }) => {
+const Card = ({ disable, card, handleChoice, flipped }) => {
   const { theme } = useContext(themeContext);
   const handleClick = () => {
     if (!disable) {
@@ -22,7 +22,7 @@ const Card = ({ disable, card, handleChoice, flipped, darkMode }) => {
         height={720}
       />
       <img
-        src={theme !== "dark" ? "/images/logo.webp" : "/images/darklogo.webp"}
+        src={theme !== "dark" ? "/images/logo.jpg" : "/images/darklogo.jpg"}
         alt='card-back'
         onClick={handleClick}
         className='back w-full rounded-md shadow-md'

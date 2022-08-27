@@ -17,6 +17,9 @@ const TileGame = () => {
 
   const handleChoice = (card) => {
     if (!disable) {
+      if (choiceOne && choiceOne.id === card.id) {
+        return;
+      }
       choiceOne ? setChoiceTwo(card) : setChoiceOne(card);
     }
   };

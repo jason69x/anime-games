@@ -6,6 +6,11 @@ const fetcher = async (...args) =>
 const useFetch = (URL) => {
   const { data, error, mutate } = useSWR(URL, fetcher, {
     revalidateOnFocus: false,
+    revalidateOnReconnect: false,
+    refreshWhenHidden: false,
+    refreshWhenOffline: false,
+    refreshInterval: 0,
+    revalidateIfStale: false,
   });
   let isLoading = !error && !data;
   let isError = error;
