@@ -9,7 +9,7 @@ import Head from "next/head";
 
 export default function Home() {
   const { data, isError, mutate } = useFetch(
-    "https://animechan.vercel.app/api/random"
+    "https://fubuki-api.vercel.app/api/v1/random"
   );
   const {
     data: imageData,
