@@ -9,7 +9,7 @@ import Head from "next/head";
 
 export default function Home() {
   const { data, isError, mutate } = useFetch(
-    "https://animechan.xyz/api/random"
+    "https://animechan.io/api/v1/quotes/random"
   );
   const {
     data: imageData,
