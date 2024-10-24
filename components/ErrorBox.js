@@ -15,10 +15,10 @@ const ErrorBox = ({ bgColor }) => {
       <Navbar bgColor={bgColor} />
       <div className='errorBox bg-white w-4/5 h-1/5 p-4 lg:w-2/5 text-center grid grid-cols-1 place-items-center overflow-auto rounded-lg dark:bg-gray-700'>
         <p className='font-mono text-lg lg:text-xl'>
-          Sorry, plz try again later!
+          Sorry, api is down,plz try again later!
         </p>
         <p className='font-mono text-lg flex items-center'>
-          - Chika{" "}
+          - bye{" "}
           <HeartIcon className='h-4 w-4 inline-block lg:h-5 lg:w-5 m-1'></HeartIcon>
         </p>
       </div>
