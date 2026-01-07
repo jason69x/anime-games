@@ -7,7 +7,7 @@ const Navbar = ({ bgColor }) => {
     <div className='flex justify-between fixed top-0 right-0 bg-white rounded-md transition-all ease-in-out  p-1 m-1 dark:bg-gray-700 space-x-1'>
       <DarkModeBtn bgColor={bgColor} />
 
-      <Link href='https://www.linkedin.com/in/abhishek-meena-886998157'>
+      <Link legacyBehavior href='https://www.linkedin.com/in/abhishek-meena-886998157'>
         <a
           target='_blank'
           aria-label='linkedin profile'

@@ -11,17 +11,16 @@ const Card = ({ disable, card, handleChoice, flipped }) => {
   };
   return (
     <div
-      className={`${
-        flipped ? "flipped" : ""
-      } relative flex items-center content-center rounded-md shadow-lg select-none`}
+      className={`${flipped ? "flipped" : ""
+        } relative flex items-center content-center rounded-md shadow-lg select-none`}
     >
       <Image
         src={card.src}
         alt='card-front'
         layout='fill'
         className='front absolute w-full rounded-md shadow-md'
-        width={720}
-        height={720}
+      //width={720}
+      //height={720}
       />
       <Image
         src={theme !== "dark" ? "/images/logo.jpg" : "/images/darklogo.jpg"}

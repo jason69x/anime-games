@@ -53,15 +53,15 @@ export default function Home() {
           style={{ color: `${bgColor}` }}
         >
           <p className='font-mono text-lg lg:text-2xl font-semibold'>
-            {data.content.length < 200 ? data.anime.name : tempData.anime}
+            {data.data.content.length < 200 ? data.data.anime.name : tempData.anime}
           </p>
 
           <div className='quote'>
             <p className='font-mono text-lg lg:text-xl pb-4'>
-              {data.content.length < 200 ? data.content : tempData.quote}
+              {data.data.content.length < 200 ? data.data.content : tempData.quote}
             </p>
             <p className='font-mono text-sm lg:text-lg'>
-              - {data.content.length < 200 ? data.character.name : tempData.character}
+              - {data.data.content.length < 200 ? data.data.character.name : tempData.character}
             </p>
           </div>
           <button
